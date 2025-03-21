@@ -6,6 +6,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:21
 ARG JAR_FILE=target/user-service.jar
-COPY ${JAR_FILE} app.jar
+COPY --from=build /app/target/user-service.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
 EXPOSE 8087
