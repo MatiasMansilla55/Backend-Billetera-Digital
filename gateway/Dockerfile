@@ -5,6 +5,6 @@ RUN mvn clean package -DskipTests
 
 FROM openjdk:21
 WORKDIR /app
-COPY --from=build /app/target/gateway.jar app.ja
+COPY --from=build /app/target/gateway.jar app.jar
 ENTRYPOINT ["java","-jar", "app.jar"]
 EXPOSE 8085
