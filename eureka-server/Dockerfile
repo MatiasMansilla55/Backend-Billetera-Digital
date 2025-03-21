@@ -1,5 +1,10 @@
+FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
 FROM openjdk:21
-ARG JAR_FILE=target/eureka-server.jar
-COPY ${JAR_FILE} app.jar
+WORKDIR /app
+COPY --from=build /app/target/eureka-server.jar app.jar
 ENTRYPOINT ["java","-jar", "app.jar"]
 EXPOSE 8761
