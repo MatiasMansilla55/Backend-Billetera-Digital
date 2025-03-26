@@ -152,6 +152,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>api-transfers</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
