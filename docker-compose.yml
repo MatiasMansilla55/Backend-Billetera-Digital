@@ -6,8 +6,13 @@ services:
     container_name: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Iancurti$87
-      MYSQL_DATABASE: userregistry
+      MYSQL_PUBLIC_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
+      MYSQLUSER: root
+      MYSQL_ROOT_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
+      MYSQLDATABASE: railway
+      MYSQLPORT: 3306
+      MYSQLHOST: mysql.railway.internal
+
     ports:
       - 3307:3306
     volumes:
@@ -47,9 +52,9 @@ services:
     ports:
       - 8087:8087
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/userregistry?createDatabaseIfNotExist=true
+      DB_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
       DB_USERNAME: root
-      DB_PASSWORD: Iancurti$87
+      DB_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
     depends_on:
       mysql:
         condition: service_healthy
@@ -62,9 +67,9 @@ services:
     ports:
       - 8084:8084
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/userregistry?createDatabaseIfNotExist=true
+      DB_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
       DB_USERNAME: root
-      DB_PASSWORD: Iancurti$87
+      DB_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
     depends_on:
       mysql:
         condition: service_healthy
@@ -77,9 +82,9 @@ services:
     ports:
       - 9091:9091
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/userregistry?createDatabaseIfNotExist=true
+      DB_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
       DB_USERNAME: root
-      DB_PASSWORD: Iancurti$87
+      DB_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
     depends_on:
       mysql:
         condition: service_healthy
@@ -92,9 +97,9 @@ services:
     ports:
       - 9092:9092
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/userregistry?createDatabaseIfNotExist=true
+      DB_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
       DB_USERNAME: root
-      DB_PASSWORD: Iancurti$87
+      DB_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
     depends_on:
       mysql:
         condition: service_healthy
@@ -107,9 +112,9 @@ services:
     ports:
       - 8083:8083
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/userregistry?createDatabaseIfNotExist=true
+      DB_URL: jdbc:mysql://root:PCDygquNNTVHqGAYDhGRynwkGKtEAfYM@hopper.proxy.rlwy.net:28322/railway
       DB_USERNAME: root
-      DB_PASSWORD: Iancurti$87
+      DB_PASSWORD: PCDygquNNTVHqGAYDhGRynwkGKtEAfYM
     depends_on:
       mysql:
         condition: service_healthy
