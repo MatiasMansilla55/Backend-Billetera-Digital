@@ -7,7 +7,7 @@ spring:
     config:
       uri: https://backend-billetera-digital-1.onrender.com # Config Service en Render
       discovery:
-        serviceId: config-service
+        serviceId: config-server
       enabled: true
     gateway:
       globalcors:
